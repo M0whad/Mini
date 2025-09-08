@@ -39,12 +39,12 @@ void Add_book()
         ;
 
     printf("Entrer le prix du livre:\n");
-    scanf("%.2f", Livres[Livres_calculer].b_price);
+    scanf("%f", &Livres[Livres_calculer].b_price);
     while (getchar() != '\n')
         ;
 
     printf("Entrer la quantite en stock: \n");
-    scanf("%d", Livres[Livres_calculer].Q_I_S);
+    scanf("%d", &Livres[Livres_calculer].Q_I_S);
     while (getchar() != '\n')
         ;
 
@@ -96,7 +96,7 @@ void Del_book()
     int pos = -1;
     for (int i = 0; i < Livres_calculer; i++)
     {
-        if (strcmp(Livres[i].b_name, t_t_delete) == 0)
+        if (strcasecmp(Livres[i].b_name, t_t_delete) == 0)
         {
             pos = i;
             break;
@@ -146,7 +146,7 @@ void Mett_book()
     int f_index = -1;
     for (int i = 0; i < Livres_calculer; i++)
     {
-        if (strcmp(Livres[i].b_name, s_livre) == 0)
+        if (strcasecmp(Livres[i].b_name, s_livre) == 0)
         {
             f_index = i;
             break;
@@ -160,7 +160,7 @@ void Mett_book()
     }
 
     printf("Entrer la Nouveaulle quantite de livre: ");
-    scanf("%d", Livres[f_index].Q_I_S);
+    scanf("%d", &Livres[f_index].Q_I_S);
     while (getchar() != '\n')
         ;
 
@@ -195,7 +195,7 @@ void Ch_book()
     int b_index = -1;
     for (int i = 0; i < Livres_calculer; i++)
     {
-        if (strcmp(Livres[i].b_name, ch_livre) == 0)
+        if (strcasecmp(Livres[i].b_name, ch_livre) == 0)
         {
             b_index = i;
             break;
@@ -211,60 +211,60 @@ void Ch_book()
     printf("Livre trouvé: %s || %s || %.2f || %d\n", Livres[b_index].b_name, Livres[b_index].b_author, Livres[b_index].b_price, Livres[b_index].Q_I_S);
 }
 
-int main()
-{
-    while (1)
-    {
-        int choix = 0; // is that mea that the user still didn't put anything ?
-        printf("\n\t\t__*__ GESTION DE STOCK DANS UNE LIBRAIRIEE__*__\n");
-        do
-        {
-            printf("\n\n\t __MENU__ ");
-            printf("\n--------------------------------------------------------\n");
-            printf("1. Ajouter Un Nouveau Livre"); // done
-            printf("\n--------------------------------------------------------\n");
-            printf("2. Chercher Un Livre Par Son Titre"); // done
-            printf("\n--------------------------------------------------------\n");
-            printf("3. Afficher Tous Les Livres Disponible"); // done
-            printf("\n--------------------------------------------------------\n");
-            printf("4. Mettre A jour La Quantite D'un Livres"); // done
-            printf("\n--------------------------------------------------------\n");
-            printf("5. Supprimer un livre du Stock"); // done
-            printf("\n--------------------------------------------------------\n");
-            printf("0. Quitter"); // done
-            printf("\n--------------------------------------------------------\n");
+// int main()
+// {
+//     while (1)
+//     {
+//         int choix = 0; // is that mea that the user still didn't put anything ?
+//         printf("\n\t\t__*__ GESTION DE STOCK DANS UNE LIBRAIRIEE__*__\n");
+//         do
+//         {
+//             printf("\n\n\t __MENU__ ");
+//             printf("\n--------------------------------------------------------\n");
+//             printf("1. Ajouter Un Nouveau Livre"); // done
+//             printf("\n--------------------------------------------------------\n");
+//             printf("2. Chercher Un Livre Par Son Titre"); // done
+//             printf("\n--------------------------------------------------------\n");
+//             printf("3. Afficher Tous Les Livres Disponible"); // done
+//             printf("\n--------------------------------------------------------\n");
+//             printf("4. Mettre A jour La Quantite D'un Livres"); // done
+//             printf("\n--------------------------------------------------------\n");
+//             printf("5. Supprimer un livre du Stock"); // done
+//             printf("\n--------------------------------------------------------\n");
+//             printf("0. Quitter"); // done
+//             printf("\n--------------------------------------------------------\n");
 
-            scanf("%d", &choix);
-            int c;
-            while ((c = getchar()) != '\n' && c != EOF)
-                ;
+//             scanf("%d", &choix);
+//             int c;
+//             while ((c = getchar()) != '\n' && c != EOF)
+//                 ;
 
-            switch (choix)
-            {
-            case 1:
-                Add_book();
-                break; // done
-            case 2:
-                Ch_book();
-                break; // done
-            case 3:
-                Dis_book();
-                break; // done
-            case 4:
-                Mett_book();
-                break; // done
-            case 5:
-                Del_book();
-                break;
-            case 0:
-                printf("Au revoir ! \n");
-                break;
-            default:
-                printf("Entrer invalide...");
-                break;
-            }
-        } while (choix != 0);
+//             switch (choix)
+//             {
+//             case 1:
+//                 Add_book();
+//                 break; // done
+//             case 2:
+//                 Ch_book();
+//                 break; // done
+//             case 3:
+//                 Dis_book();
+//                 break; // done
+//             case 4:
+//                 Mett_book();
+//                 break; // done
+//             case 5:
+//                 Del_book();
+//                 break;
+//             case 0:
+//                 printf("Au revoir ! \n");
+//                 break;
+//             default:
+//                 printf("Entrer invalide...");
+//                 break;
+//             }
+//         } while (choix != 0);
 
-        return 0;
-    }
-}
+//         return 0;
+//     }
+// }

@@ -12,5 +12,9 @@ typedef struct{
 
 
 void Add_book();
+void Dis_book();
+void Del_book();
+void Mett_book();
+void Ch_book();
 
 #endif

@@ -1,5 +1,6 @@
 #include "header.h"
 #include <stdio.h>
+#include<stdlib.h>
 #include <string.h>
 
 int main(){
@@ -27,13 +28,21 @@ int main(){
         int c; while ((c = getchar())!= '\n' && c!= EOF);
 
         switch (choix){
-            case 1: Add_book();break;//done
-            case 2: Ch_book();break;// done but not perfefctlly understandable
-            case 3: Dis_book();break;//done
-            case 4: Mett_book();break;//done
-            case 5: Del_book(); break;
-            case 0: printf("Au revoir ! \n"); break;
-            default: printf("Entrer invalide...");break;
+            case 1: Add_book();
+                break;//done
+            case 2: Ch_book();
+                break;// done but not perfefctlly understandable
+            case 3: Dis_book();
+                break;//done
+            case 4: Mett_book();
+                break;//done
+            case 5: Del_book();
+                break;
+            case 0: printf("Au revoir ! \n");
+            exit(0);
+                break;
+            default: printf("Entrer invalide...");
+                break;
         }  
     }while(choix != 0);
 
