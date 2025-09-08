@@ -1,4 +1,4 @@
-<h1></h1>
+<h1>- strcmp vs strcasecmp</h1>
 La fonction strcmp compare deux chaînes de caractères en tenant compte des différences entre les lettres majuscules et minuscules, ce qui signifie qu'elle les considère comme distinctes.
 En revanche, la fonction strcasecmp ignore cette différence et traite les majuscules et les minuscules comme étant identiques. De plus, il est important de noter que strcmp renvoie un nombre
 négatif si la première chaîne est inférieure à la seconde, un nombre positif si elle est supérieure,et 0 si les deux chaînes sont identiques. Par exemple, "Bonjour" et "bonjour" ne sont pas
